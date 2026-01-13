@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Employee, KPIType, CalculationResult, EmployeePerformance, EmployeeRole } from './types';
 import EmployeeCard from './components/EmployeeCard';
@@ -171,7 +170,13 @@ const App: React.FC = () => {
           <h2 className="text-xs font-bold text-gray-400 uppercase">Colaboradores</h2>
           <div className="max-h-[70vh] overflow-y-auto pr-2 custom-scrollbar space-y-2">
             {employees.map(emp => (
-              <EmployeeCard key={emp.id} employee={emp} isSelected={selectedId === emp.id} onSelect={(e) => setSelectedId(e.id)} onDelete={handleDeleteEmployee} />
+              <EmployeeCard 
+                key={emp.id} 
+                employee={emp} 
+                isSelected={selectedId === emp.id} 
+                onSelect={(employee: Employee) => setSelectedId(employee.id)} 
+                onDelete={handleDeleteEmployee} 
+              />
             ))}
           </div>
         </div>
