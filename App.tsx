@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Employee, KPIType, CalculationResult, EmployeePerformance, EmployeeRole } from './types';
-import EmployeeCard from './components/EmployeeCard';
-import KPICalculator from './components/KPICalculator';
-import { getBonusPercentage } from './services/calculator';
-import { KPI_LABELS } from './constants';
+import { Employee, KPIType, CalculationResult, EmployeePerformance, EmployeeRole } from './types.ts';
+import EmployeeCard from './components/EmployeeCard.tsx';
+import KPICalculator from './components/KPICalculator.tsx';
+import { getBonusPercentage } from './services/calculator.ts';
+import { KPI_LABELS } from './constants.ts';
 
 const formatCurrency = (value: number) => {
   return new Intl.NumberFormat('pt-BR', {
