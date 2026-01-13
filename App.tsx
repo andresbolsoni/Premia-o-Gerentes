@@ -258,12 +258,29 @@ const App: React.FC = () => {
           <div className="bg-white rounded-2xl w-full max-w-md p-6">
             <h2 className="text-xl font-bold mb-4">Adicionar Colaborador</h2>
             <form onSubmit={handleAddEmployee} className="space-y-4">
-              <input placeholder="Nome" required className="w-full p-2 border rounded" value={newEmployee.name} onChange={e => setNewEmployee(p => ({ ...p, name: e.target.value }))} />
-              <select className="w-full p-2 border rounded" value={newEmployee.role} onChange={e => setNewEmployee(p => ({ ...p, role: e.target.value as EmployeeRole }))}>
+              <input 
+                placeholder="Nome" 
+                required 
+                className="w-full p-2 border rounded" 
+                value={newEmployee.name} 
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewEmployee(p => ({ ...p, name: e.target.value }))} 
+              />
+              <select 
+                className="w-full p-2 border rounded" 
+                value={newEmployee.role} 
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewEmployee(p => ({ ...p, role: e.target.value as EmployeeRole }))}
+              >
                 <option value={EmployeeRole.EQUIPE}>Equipe</option>
                 <option value={EmployeeRole.GERENTE}>Gerente</option>
               </select>
-              <input type="number" placeholder="Salário Base" required className="w-full p-2 border rounded" value={newEmployee.baseSalary} onChange={e => setNewEmployee(p => ({ ...p, baseSalary: e.target.value }))} />
+              <input 
+                type="number" 
+                placeholder="Salário Base" 
+                required 
+                className="w-full p-2 border rounded" 
+                value={newEmployee.baseSalary} 
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewEmployee(p => ({ ...p, baseSalary: e.target.value }))} 
+              />
               <div className="flex gap-2">
                 <button type="button" onClick={() => setShowAddModal(false)} className="flex-1 p-2 bg-gray-100 rounded">Cancelar</button>
                 <button type="submit" className="flex-1 p-2 bg-blue-600 text-white rounded">Salvar</button>
